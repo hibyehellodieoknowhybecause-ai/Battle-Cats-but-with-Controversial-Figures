@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Standalone Basic Cat Stage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="stage-wrap" aria-label="Standalone basic stage">
+        <canvas id="game" width="1280" height="720"></canvas>
+        <div class="top-left-hud">
+          <button id="restartButton" class="pause-badge" type="button" aria-label="Restart stage">II</button>
+          <strong id="stageName">First Test Stage</strong>
+          <span>[Easy]</span>
+        </div>
+        <div class="money-hud" aria-label="Wallet">
+          <strong><span id="money">0</span>/<span id="walletMax">0</span>¢</strong>
+        </div>
+        <div class="battle-tools" hidden>
+          <button id="speedButton" type="button" aria-label="Speed">x1</button>
+        </div>
+        <div class="bottom-hud">
+          <button id="workerButton" class="worker-card" type="button">
+            <span class="worker-label">Level</span>
+            <strong id="worker">1</strong>
+            <small id="workerCost">$120</small>
+          </button>
+          <div class="unit-deck" aria-label="Unit deck">
+            <button id="catButton" class="unit-card active-unit" type="button">
+              <span class="unit-art" aria-hidden="true">
+                <span class="cat-face"></span>
+              </span>
+              <span class="unit-cost">$50</span>
+              <span id="catCooldownOverlay" class="cooldown-overlay" aria-hidden="true"></span>
+              <span id="catCooldownBar" class="cooldown-bar" aria-hidden="true"></span>
+            </button>
+            <button class="unit-card empty-unit" type="button" disabled>
+              <span class="unit-art">?</span>
+              <span class="unit-cost">---</span>
+            </button>
+            <button class="unit-card empty-unit" type="button" disabled>
+              <span class="unit-art">?</span>
+              <span class="unit-cost">---</span>
+            </button>
+            <button class="unit-card empty-unit" type="button" disabled>
+              <span class="unit-art">?</span>
+              <span class="unit-cost">---</span>
+            </button>
+            <button class="unit-card empty-unit" type="button" disabled>
+              <span class="unit-art">?</span>
+              <span class="unit-cost">---</span>
+            </button>
+          </div>
+          <button id="cannonButton" class="cannon-card" type="button">
+            <span class="cannon-charge">
+              <span id="cannonFill"></span>
+            </span>
+            <strong>CAT</strong>
+            <small>Cannon</small>
+          </button>
+        </div>
+        <div id="message" class="message" hidden></div>
+      </section>
+    </main>
+    <script src="src/game.js"></script>
+  </body>
+</html>
